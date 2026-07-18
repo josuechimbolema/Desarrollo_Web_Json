@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #0b0e14;
+  --surface: #12161f;
+  --surface-2: #1a1f2b;
+  --border: #232938;
+  --text: #e5e9f0;
+  --text-dim: #7c8494;
+  --accent: #4ade80;
+  --accent-dim: #1f4d34;
+  --danger: #f87171;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-attachment: fixed;
+  background-color: var(--bg);
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  margin: 0 0 20px;
+  font-weight: 700;
+}
+
+/* --- Auth pages --- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.auth-form { display: flex; flex-direction: column; gap: 14px; }
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+input {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+}
+input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.btn-primary {
+  background: var(--accent);
+  color: #06280f;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.btn-primary:hover { filter: brightness(1.08); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.sm { padding: 6px 10px; font-size: 12px; }
+
+.btn-google {
+  display: block;
+  text-align: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 16px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+}
+.btn-google:hover { border-color: var(--accent); }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+  color: var(--text-dim);
+  font-size: 12px;
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.auth-footer {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+}
+.auth-footer a { color: var(--accent); }
+
+.error-text {
+  color: var(--danger);
+  font-size: 13px;
+  margin: 0;
+}
+
+.loading-text {
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+
+/* --- Dashboard --- */
+.dashboard { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabla th {
+  text-align: left;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--surface-2);
+  padding: 12px 16px;
+}
+
+.tabla td {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.tabla input {
+  width: 100%;
+  padding: 6px 8px;
+}
+
+.acciones { display: flex; gap: 8px; }
